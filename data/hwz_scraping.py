@@ -95,7 +95,7 @@ def scrape_hwz(threads, max_per_thread, output):
 def main():
     parser = argparse.ArgumentParser(description = "Inputs to HWZ Scraper")
     parser.add_argument('--num_threads', type=int, default = None, help='Number of threads to scrape')
-    parser.add_argument('--max-per-thread', type=int, default = 5000000000000000, help='maximum number of comments from each thread')
+    parser.add_argument('--max-per-thread', type=int, default = 500000000, help='maximum number of comments from each thread')
     parser.add_argument('--thread', type=str, default = "https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16", help = "thread to scrape")
     parser.add_argument('--output', type=str, default = "hwz_sentences.txt", help = "name of output  file")
 
