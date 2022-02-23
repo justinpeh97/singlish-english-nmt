@@ -1,0 +1,16 @@
+askreddit
+blog
+funny
+gaming
+iama
+lifehacks
+lifeprotips
+news
+nottheonion
+relationship_advice
+science
+showerthoughts
+sports
+technology
+todayilearned
+worldnews
