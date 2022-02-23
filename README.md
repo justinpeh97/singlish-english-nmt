@@ -47,8 +47,9 @@ Where input_file is the directory+name of the text file to subset, output_file i
 
 ## To do
 
-Add in English cleaning algorithm \\
-Mention News Crawl
+Add in English cleaning algorithm 
+
+Mention where to put datasets
 
 
 
