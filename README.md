@@ -29,10 +29,10 @@ Optional arguments:
 
 | Argument            | Default       | Description   |	
 | :------------------ |:-------------:| :-------------|
-| --num_threads	      |	None                                                                |the score from the classifier for each C position
-| --max_per_thread    | 500000000                                                           |
-| --thread 	          |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	|number of cores to be used
-| --output 		         | "hwz_sentences.txt"	                                                | minimum length of DMRs required to be reported 
+| --num_threads	      |	None   | Number of threads to scrape. If not specified (default = None), then all the threads will be scraped.
+| --max_per_thread    | 500000000  | Maximum number of comments to scrape from each thread. Default number is an arbitrarily large number which means that all comments will be sraped. 
+| --thread 	          |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
+| --output 		         | "hwz_sentences.txt"	 | Name of output file. 
 
 ### News Crawl dataset
 
