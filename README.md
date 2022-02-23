@@ -24,7 +24,7 @@ Where id, secret and agent are the client_id, client_secret and user_agent used 
 
 ## To do
 
-Add in English cleaning algorithm
+Add in English cleaning algorithm \\
 Mention News Crawl
 
 ## Other experiments
