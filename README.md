@@ -27,12 +27,12 @@ python hwz_scrape.py
 
 Optional arguments: 
 
-| Argument            | Default       | Description   |	
-| :------------------ |:-------------:| :-------------|
-| --num_threads	      |	None   | Number of threads to scrape. If not specified (default = None), then all the threads will be scraped.
-| --max_per_thread    | 500000000  | Maximum number of comments to scrape from each thread. Default number is an arbitrarily large number which means that all comments will be sraped. 
-| --thread 	          |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
-| --output 		         | "hwz_sentences.txt"	 | Name of output file. 
+| Argument               | Default       | Description   |	
+| :--------------------- |:-------------:| :-------------|
+| --num_threads	         |	None   | Number of threads to scrape. If not specified (default = None), then all the threads will be scraped.
+| --max_per_thread       | 500000000  | Maximum number of comments to scrape from each thread. Default number is an arbitrarily large number which means that all comments will be sraped. 
+| --thread 	             |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
+| --output 		            | "hwz_sentences.txt"	 | Name of output file. 
 
 ### News Crawl dataset
 
