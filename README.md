@@ -34,7 +34,7 @@ Optional arguments:
 | --thread 	                |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
 | --output 		               | "hwz_sentences.txt"	 | Name of output file. 
 
-### News Crawl dataset
+### (Optional) News Crawl dataset
 
 Although the News Crawl dataset was eventually not used in the final model, it was used in experimentation. The News Crawl dataset can be downloaded from https://data.statmt.org/news-crawl/en/. The dataset used for experimentation was the 2020 News Crawl English dataset, subset to 13 million sentences. To subset a dataset, simply run 
 
