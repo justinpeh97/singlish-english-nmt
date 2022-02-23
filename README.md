@@ -10,6 +10,21 @@ git clone https://github.com/justinpeh97/singlish-english-nmt.git
 
  ## Generation of datasets
  
- ### Singlish dataset
+ ### Reddit dataset
  
+```
+cd data
+python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
+```
 
+Where id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in (.....) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optinal argument --post_per_subreddit .
+
+### English dataset
+
+
+## To do
+
+Add in English cleaning algorithm
+Mention News Crawl
+
+## Other experiments
