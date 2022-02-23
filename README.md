@@ -19,7 +19,33 @@ python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 
 Where id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optinal argument --post_per_subreddit .
 
-### English dataset
+### Singlish dataset
+
+```
+python hwz_scrape.py 
+```
+
+Optional arguments: 
+
+| Parameter                 | Default       | Description   |	
+| :------------------------ |:-------------:| :-------------|
+| -sc --scorecutoff 	       |	0.1           |the score from the classifier for each C position
+| -p  --pruncutoff          | 0.1           |the SVM score checked for consecutive Cs from both ends to refine the boundaries
+| -npp -–numprocess 	       |	8	            |number of cores to be used
+| -ml --minlength  		       | 50	           | minimum length of DMRs required to be reported 
+| -ncb --numcb 		           | 5             | minimum number of Cs present between DMRs to keep them seperate
+| -md  -–mergedist 	        | 500           | maximum distance allowed between DMRs to merge 
+| -prn --prunningC	         | 3             | number of consecutives Cs to be considered for pruning for boundary refinement2
+| -ns --numsamples          | all           | no.of samples to use for DMR calling; default takes all sample in the file
+| -sp --startposition       | 1st position  | start position of sample in the sample file to use for timeseries DMR calling 
+| -BSSeeker2 --BSSeeker2    | False         | input CGmap file from BSSeeker2
+| -mc --minc			             | 3 	           | minimum number of Cs in a DMR
+| -sin --singlechrom			     | False         | parallel code for single chromosome; *npp* will be used for parallel run for each chr
+| -d --delta			             | 0.1     	     | minimum average difference in methylation required in a DMR 
+| -wrt --withrespectto		    | all     	     | samples to use for DMR calling for pairwise comparisions with respect to specific samples
+| -Keepall --Keepall		      | False     	   | Keep all cytosine positions present in atleast one of the replicate
+
+### News Crawl dataset
 
 
 ## To do
