@@ -27,23 +27,12 @@ python hwz_scrape.py
 
 Optional arguments: 
 
-| Parameter                 | Default       | Description   |	
-| :------------------------ |:-------------:| :-------------|
-| -sc --scorecutoff 	       |	0.1           |the score from the classifier for each C position
-| -p  --pruncutoff          | 0.1           |the SVM score checked for consecutive Cs from both ends to refine the boundaries
-| -npp -–numprocess 	       |	8	            |number of cores to be used
-| -ml --minlength  		       | 50	           | minimum length of DMRs required to be reported 
-| -ncb --numcb 		           | 5             | minimum number of Cs present between DMRs to keep them seperate
-| -md  -–mergedist 	        | 500           | maximum distance allowed between DMRs to merge 
-| -prn --prunningC	         | 3             | number of consecutives Cs to be considered for pruning for boundary refinement2
-| -ns --numsamples          | all           | no.of samples to use for DMR calling; default takes all sample in the file
-| -sp --startposition       | 1st position  | start position of sample in the sample file to use for timeseries DMR calling 
-| -BSSeeker2 --BSSeeker2    | False         | input CGmap file from BSSeeker2
-| -mc --minc			             | 3 	           | minimum number of Cs in a DMR
-| -sin --singlechrom			     | False         | parallel code for single chromosome; *npp* will be used for parallel run for each chr
-| -d --delta			             | 0.1     	     | minimum average difference in methylation required in a DMR 
-| -wrt --withrespectto		    | all     	     | samples to use for DMR calling for pairwise comparisions with respect to specific samples
-| -Keepall --Keepall		      | False     	   | Keep all cytosine positions present in atleast one of the replicate
+| Argument            | Default       | Description   |	
+| :------------------ |:-------------:| :-------------|
+| --num_threads	      |	None                                                                |the score from the classifier for each C position
+| --max_per_thread    | 500000000                                                           |
+| --thread 	          |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	|number of cores to be used
+| --output 		         | "hwz_sentences.txt"	                                                | minimum length of DMRs required to be reported 
 
 ### News Crawl dataset
 
