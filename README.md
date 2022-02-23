@@ -5,7 +5,6 @@
  This readme file provides a step-by-step explanation on how to reproduce the results found in __. 
 
 ```
-
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
 ```
 
