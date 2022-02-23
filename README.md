@@ -36,10 +36,20 @@ Optional arguments:
 
 ### News Crawl dataset
 
+Although the News Crawl dataset was eventually not used in the final model, it was used in experimentation. The News Crawl dataset can be downloaded from https://data.statmt.org/news-crawl/en/. The dataset used for experimentation was the 2020 News Crawl English dataset, subset to 13 million sentences. To subset a dataset, simply run 
+
+```
+python subset_data.py --input input_file --output output_file --num_sent number_of_sentences
+```
+Where input_file is the directory+name of the text file to subset, output_file is the name of the output file and number_of_sentences is the number of sentences to subset. 
+
+
 
 ## To do
 
 Add in English cleaning algorithm \\
 Mention News Crawl
+
+
 
 ## Other experiments
