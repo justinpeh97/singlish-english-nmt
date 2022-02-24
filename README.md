@@ -54,7 +54,7 @@ cd data
 bash process_datasets.sh
 ```
 
-The bash script processes 4 datasets:  test dataset of Singlish sentences, validation dataset of Singlish sentences, raw English sentences (from Reddit), raw Singlish sentences (from HardwareZone). Conversion to lower case and tokenization is performed for the test/val Singlish datasets as well as the raw English dataset. Conversion to lower case, tokenization, cleaning of text, conversion of English words to Singlish vocabulary and filtering is done for the raw Singlish sentences.
+The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is performed all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is performed for all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
 
 
 ## To do
