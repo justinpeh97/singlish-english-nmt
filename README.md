@@ -17,7 +17,7 @@ cd data/generate_train_data
 python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 ```
 
-Where id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optinal argument --post_per_subreddit .
+Where id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/generate_train_data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optinal argument --post_per_subreddit .
 
 ### Singlish dataset
 
@@ -39,7 +39,7 @@ Optional arguments:
 ## Dataset Preprocessing
 
 There are 5 main dataset preprocessing operations:
-1. Convert text to lowercase - Eases model training
+1. Convert text to lowercase
 2. Tokenization
 3. Cleaning of text 
 - Cleaning of English words (e.g. "actly" -> "actually", "alr" -> "already")
@@ -55,11 +55,7 @@ bash process_datasets.sh
 ```
 
 The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is performed all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is performed for all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
-
-
-## To do
-
-Mention where to put datasets
+Steps 3, 4 and 5 consists of cleaning steps defined by 6 files (clean_english_regex.txt, clean_english_replace.txt, clean_english_to_singlish.txt, clean_singlish_regex.txt, singlish_replace.txt, singlish_vocab.txt) found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are handpicked rules are cleaning steps that map a word to another word. For instance, the line 
 
 
 
