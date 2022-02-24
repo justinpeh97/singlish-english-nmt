@@ -35,6 +35,7 @@ Optional arguments:
 | --output 		               | "hwz_sentences.txt"	 | Name of output file. 
 
 
+If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. max_per_thread controls the maximum number of comments to scrape from each thread. This comments the variability of the data. 
 
 ## Dataset Preprocessing
 
