@@ -1,0 +1,73 @@
+alr,already
+alrd,already
+boi,boy
+bck,back
+btw,by the way
+coz,cos
+condo,condominium
+dis,this
+den,then
+fk,fuck
+fr,for real
+gov,government
+govt,government
+gurl,girl
+geddit,get it
+hv,have
+hav,have
+hk,hongkong
+imo,in my opinion
+imho,in my honest opinion
+in b4,inb4
+ish,is
+juz,just
+lich,rich
+mins,minutes
+mth,month
+marnee,money
+nao,now
+nid,need
+nite,night
+noe,know
+nvr,never
+notch,not
+polis,police
+pls,please
+plz,please
+ppl,people
+peepur,people
+peeper,people
+rmb,remember
+repork,report
+shld,should
+shd,should
+sg,singapore
+sinkapore,singapore
+tis,this
+tink,think
+ur,your
+unker,uncle
+wat,what
+wk,week
+wif,with
+w/o,without
+w,with
+yur,your
+tot,thought
+yrself,yourself
+yr old,year old
+yrs old,years old
+don't,dont
+donch,dont
+dun,dont
+didn't,didnt
+can't,cant
+isn't,isnt
+it's,its
+won't,wont
+wouldn't,wouldnt
+what's,whats
+i'm,im
+ain't,aint
+aren't,arent
+they've,theyve

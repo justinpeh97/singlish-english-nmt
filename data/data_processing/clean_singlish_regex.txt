@@ -1,0 +1,105 @@
+wah,wa
+aga[kr]? ?aga[kr]?,agar-agar
+aga[kr]?[- ]?ration,agakration
+ah lian,ahlian
+ah beng,ahbeng
+ah seng,ahseng
+ah long,ahlong
+ah neh,ahneh
+ah tiong,ahtiong
+ah ?(kwa|kua|qua),ahgua
+abnn,ah-bu-neh-neh
+ah[ -]?[bp]u[ -]?neh?[ -]?neh?,ah-bu-neh-neh
+ahh+,ah
+ang ?moh?,angmo
+amdk,angmo
+(hong|ang) ?(pau|pow|bao),angpow
+arr+[.!?],ar
+ai ?yo ?(yo)?h?,aiyo
+hai ?ya+h,aiya
+balik,balek
+bak? ?k+wa,bakkwa
+[bp]ao ?toh,baotoh
+buay ?kan,buay gan
+bo ?[bp]ian,bo bian
+caipng,cai png
+chee+m,chim
+(ji+chi+ci+che+) ?bai,chibai
+chao keng,chaokeng
+ch?in ?ch?ai,chinchai
+[dt]u ?lan,dulan
+[td]a ?(pau|pao|bao),dabao
+d[uo]n+id,dunnid
+d[uo]n+oe,dunno
+dua ?(kee|ki),dua kee
+ehh+,eh
+gei ?gei,geh geh
+ge[ih] ?kiang,geikiang
+go ?stun,gostan
+gonecase,gone case
+guai lan,guailan
+hao lian,haolian
+ho ?(sei|seh|say),hoseh
+holiao,ho liao
+hong ?[gk]an,honggan
+i[szj]+it,isit
+jelak,jelat
+jia lat,jialat
+ji tao,jitao
+kampung,kampong
+k[ea]n+a,kena
+kar chng,karchng
+ka ?ni ?na,knn
+[kg]an ?ch[ie]ong,kanchiong
+(ki|ke+) ?siao,kisiao
+kns,kenasai
+ke ?na ?sai,kenasai
+ke ?yi ?ma,kym
+ke ?yi,ky
+kiam ?pah?,kiam pa
+kia si,kiasi
+kia su,kiasu
+ki chia,kichia
+kkj,kukujiao
+ku ?ku ?jiao,kukujiao
+lao lan,laolan
+lehh+,leh
+le[yh] ?chey,leychey
+lao sai,laosai
+lim ?[bp]e[hi],limpeh
+[rl]iao[sz],liao
+ lidat , liddat 
+nuah+,nua
+machiam,macam
+orbi good,orbigood
+pak tor,paktor
+pangsai,pang sai
+pangseh,pang seh
+pangjio,pang jio
+paikia,pai kia
+pai ?se[hi],paiseh
+pok kai,pokkai
+rabz,rabak
+shia+t,shiat
+siambu,siam bu
+siamdiu,siam diu
+si mi ,simi
+similj,simi lanjiao
+smlj,simi lanjiao
+shiokk+,shiok
+si ?be[ih],sibei
+si ?gin+a,si gina
+suah+,sua
+skali,sekali
+lan jiao,lanjiao
+swaku,suaku
+tow kay,towkay
+tiko peh,tikopeh
+tai ko,tyco
+(tze|zi) ?char,tzechar
+wa ?(lan|lao|lau|kao),walan
+wa seh,waseh
+xia lan,xialan
+xiao ?mei ?mei,xmm
+[xs]ia ?suay,xiasuay
+[cz]har? ?bor?,zhabor
