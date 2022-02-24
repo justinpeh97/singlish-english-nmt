@@ -34,20 +34,30 @@ Optional arguments:
 | --thread 	                |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
 | --output 		               | "hwz_sentences.txt"	 | Name of output file. 
 
-### (Optional) News Crawl dataset
 
-Although the News Crawl dataset was eventually not used in the final model, it was used in experimentation. The News Crawl dataset can be downloaded from https://data.statmt.org/news-crawl/en/. The dataset used for experimentation was the 2020 News Crawl English dataset, subset to 13 million sentences. To subset a dataset, simply run 
+
+## Dataset Preprocessing
+
+There are 5 main dataset preprocessing operations:
+1. Convert text to lowercase - Eases model training
+2. Tokenization
+3. Cleaning of text 
+- Cleaning of English words (e.g. "actly" -> "actually", "alr" -> "already")
+- Standardization / Cleaning of Singlish words (e.g "hao lian" -> "haolian")
+4. Convert English to Singlish (e.g. "also" -> "oso"). Makes the Singlish dataset more "Singlish"
+5. Filtering: Discard away sentences with no Singlish vocabulary
+
+Steps 1 & 2 are common data preprocessing steps for machine translation. Steps 3-5 are novel cleaning steps for the Singlish dataset and is believed to improve model performance. To perform dataset preprocessing, simply run the following command:
 
 ```
-python subset_data.py --input input_file --output output_file --num_sent number_of_sentences
+cd data
+bash process_datasets.sh
 ```
-Where input_file is the directory+name of the text file to subset, output_file is the name of the output file and number_of_sentences is the number of sentences to subset. 
 
+The bash script processes 4 datasets:  test dataset of Singlish sentences, validation dataset of Singlish sentences, raw English sentences (from Reddit), raw Singlish sentences (from HardwareZone). Conversion to lower case and tokenization is performed for the test/val Singlish datasets as well as the raw English dataset. Conversion to lower case, tokenization, cleaning of text, conversion of English words to Singlish vocabulary and filtering is done for the raw Singlish sentences.
 
 
 ## To do
-
-Add in English cleaning algorithm 
 
 Mention where to put datasets
 
