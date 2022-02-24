@@ -54,7 +54,7 @@ cd data
 bash process_datasets.sh
 ```
 
-The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is performed all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is performed for all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
+The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is applied to all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is applied to all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
 
 Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are cleaning steps that map a word to another word. For instance, the first line in the file clean_english_replace.txt, "alr,already", converts all instances of "alr" in the text to "already". To edit the list of handpicked rules, simply edit the file while maintening it in the same format.
 
