@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import re
 import time
 import random
@@ -6,7 +8,7 @@ import argparse
 
 
 def read_as_dic(fname):
-    file = open(fname)
+    file = open("data_processing/"+fname)
     content = file.read().splitlines()
     dic = {}
     for line in content:
@@ -15,7 +17,7 @@ def read_as_dic(fname):
     return dic
 
 def read_as_lst(fname):
-    file = open(fname)
+    file = open("data_processing/"+fname)
     content = file.read().splitlines()
     return content
 
@@ -56,8 +58,8 @@ def cleaning(input_file, output_file, lower, tokenize, clean_text, english_to_si
     content = my_file.readlines()
 
     if filtering == True:
-        singlish_kept = open("cleaned_" + output_file,"w", encoding = "utf-8")
-        singlish_discard = open("discarded_" + output_file, "w", encoding = "utf-8")
+        kept = open(output_file, "w", encoding = "utf-8")
+        discard = open(output_file + ".out", "w", encoding = "utf-8")
     else:
         output_file = open(output_file,"w", encoding = "utf-8")
         
@@ -93,11 +95,11 @@ def cleaning(input_file, output_file, lower, tokenize, clean_text, english_to_si
                 if word in line:
                     if tokenize:
                         line = tokenizer(line)
-                    singlish_kept.write(line)
+                    kept.write(line)
                     break
                 else:
                     if word == singlish_vocab[-1]:
-                        singlish_discard.write(line)
+                        discard.write(line)
         else:
             if tokenize:
                 line = tokenizer(line)
@@ -120,7 +122,6 @@ def main():
     parser.add_argument('--clean_text', action='store_true', help = "Clean Text")
     parser.add_argument('--english_to_singlish', action='store_true', help = "Convert English to Singish")
     parser.add_argument('--filtering', action='store_true', help = "Filter")
-
     
     args = parser.parse_args()
     cleaning(args.input_file, args.output_file, args.lower, args.tokenize, args.clean_text, args.english_to_singlish, args.filtering)
@@ -131,4 +132,3 @@ def main():
 if __name__ == '__main__':
     main()
     
-# example: python singlish_cleaning.py --input_file ./../test_datasets/test.sin.raw.txt   --output_file ./../test_datasets/test.sin.lower.token.txt --filtering False
