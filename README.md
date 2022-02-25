@@ -32,7 +32,7 @@ Optional arguments:
 | --num_threads	            |	None   | Number of threads to scrape. If not specified (default = None), then all the threads will be scraped.
 | --max_per_thread          | 500000000  | Maximum number of comments to scrape from each thread. Default number is an arbitrarily large number which means that all comments will be sraped. 
 | --thread 	                |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
-| --output 		               | "./../raw_singlish.txt"	 | Name of output file. 
+| --output 		               | "./../raw/raw_singlish.txt"	 | Name of output file. 
 
 
 If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. 
