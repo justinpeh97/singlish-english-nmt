@@ -13,7 +13,7 @@ git clone https://github.com/justinpeh97/singlish-english-nmt.git
  ### Reddit dataset
  
 ```
-cd data/generate_train_data
+cd data/generate_data
 python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 ```
 
@@ -35,6 +35,7 @@ Optional arguments:
 | --output 		               | "hwz_sentences.txt"	 | Name of output file. 
 
 
+If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. 
 
 ## Dataset Preprocessing
 
@@ -54,8 +55,11 @@ cd data
 bash process_datasets.sh
 ```
 
-The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is performed all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is performed for all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
-Steps 3, 4 and 5 consists of cleaning steps defined by 6 files (clean_english_regex.txt, clean_english_replace.txt, clean_english_to_singlish.txt, clean_singlish_regex.txt, singlish_replace.txt, singlish_vocab.txt) found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are handpicked rules are cleaning steps that map a word to another word. For instance, the line 
+The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is applied to all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is applied to all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
+
+Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are cleaning steps that map a word to another word. For instance, the first line in the file clean_english_replace.txt, "alr,already", converts all instances of "alr" in the text to "already". To edit the list of handpicked rules, simply edit the file while maintening it in the same format.
+
+![hey now](https://github.com/justinpeh97/singlish-english-nmt/blob/main/images/convert.PNG?raw=true)
 
 
 
