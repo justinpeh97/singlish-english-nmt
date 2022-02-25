@@ -40,15 +40,16 @@ def main():
     parser.add_argument("--client_secret", type = str, help = "client secret")
     parser.add_argument("--user_agent", type = str, help = "user agent")
     parser.add_argument("--posts_per_subreddit", type = int, default = 3000)
+    parser.add_argument("--output", type = str, default = "./../raw/raw_reddit.txt")
     args = parser.parse_args()
 
     global reddit
     reddit = praw.Reddit(client_id= args.client_id, client_secret= args.client_secret, user_agent= args.user_agent)
     subreddits = open("subreddits.txt").read().splitlines()
-    file = open("reddit_sentences.txt","w",encoding = "utf-8")
+    file = open(args.output ,"w",encoding = "utf-8")
     num_sentences = 0
     for subreddit in subreddits:
-        comments = scrape_subreddit(subreddit,5)
+        comments = scrape_subreddit(subreddit,args.posts_per_subreddit)
         cleaned_comments = []
         for comment in comments:
             comment = re.sub('[\n|\t]+',"",comment)
