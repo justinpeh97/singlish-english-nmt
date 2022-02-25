@@ -13,7 +13,7 @@ git clone https://github.com/justinpeh97/singlish-english-nmt.git
  ### Reddit dataset
  
 ```
-cd data/generate_train_data
+cd data/generate_data
 python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 ```
 
