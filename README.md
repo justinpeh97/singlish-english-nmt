@@ -2,7 +2,7 @@
  
  Despite the success of sequence-to-sequence RNN and Transformer models in Machine Translation (MT) tasks, most tasks still require a large parallel corpus. However, the progress in Unsupervised MT research has allowed for building of MT models without the need for parallel data, solely relying on monolingual corpora. This repository serves to explore the implementation of Undreamt, an unsupervised neural translation model, on Singlish-English translation tasks. The complete model is able to successfully learn Singlish-English word translations, but was unable to go beyond word-to-word translations. To the best of my knowledge, this is the first significant work done on Singlish-English machine translation.
  
- This readme file provides a step-by-step explanation on how to reproduce the results found in __. 
+ This readme file provides a step-by-step explanation on how to reproduce the results. 
 
 ```
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
@@ -24,18 +24,7 @@ Where id, secret and agent are the client_id, client_secret and user_agent used 
 ```
 python hwz_scrape.py 
 ```
-
-Optional arguments: 
-
-| Argument                  | Default       | Description   |	
-| :------------------------ |:-------------:| :-------------|
-| --num_threads	            |	None   | Number of threads to scrape. If not specified (default = None), then all the threads will be scraped.
-| --max_per_thread          | 500000000  | Maximum number of comments to scrape from each thread. Default number is an arbitrarily large number which means that all comments will be sraped. 
-| --thread 	                |	"https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16" 	| Thread to scrape from. Default is EDMW thread.
-| --output 		               | "./../raw/raw_singlish.txt"	 | Name of output file. 
-
-
-If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. 
+If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
 
 ## Dataset Preprocessing
 
