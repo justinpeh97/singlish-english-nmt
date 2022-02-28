@@ -61,6 +61,14 @@ Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [da
 
 ![hey now](https://github.com/justinpeh97/singlish-english-nmt/blob/main/images/convert.PNG?raw=true)
 
+# Obtaining model results
 
+## Word to Word model
+
+A simple baseline model can be obtained by replacing each word in the source sentence with the closest word in the target sentence based on cosine similarity. To obtain the output of the word to word model, simply run the following command: 
+
+```
+python w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped.emb --num_words 50000 --output_file data/datasets/model_output/w2w_output.txt --test_file data/datasets/processed/all.translations.txt
+```
 
 ## Other experiments
