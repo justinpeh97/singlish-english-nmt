@@ -82,5 +82,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-# python w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped.emb --num_words 50000 --output_file data/datasets/model_output/w2w_output.txt --test_file data/datasets/processed/all.translations.txt
     
