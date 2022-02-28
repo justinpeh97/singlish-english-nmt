@@ -22,18 +22,23 @@ def read_as_lst(fname):
     return content
 
 def special_replace(og_word, new_word, line):
-    new_line = line
-    if new_line[:len(og_word)+1] == og_word + " " or new_line[-3-len(og_word):-2] == " " + og_word:
-        new_line = re.sub(og_word, new_word, new_line)
-    return re.sub(" " + og_word + " ", " " + new_word + " ",new_line)
+    return re.sub(" " + og_word + " ", " " + new_word + " ",line)
 
-def tokenizer(line):
+def tokenizer_p1(line):
     line = line.lower()
-    line = line.replace("\'", " &apos;")
-    line = line.replace("\’", " &apos;")
+    line = " " + line
+    line = line.replace(",", " , ")
     line = line.replace("."," .")
     line = line.replace("?"," ?")
-    line = line.replace("!", "!")
+    line = line.replace("!", " !")
+    return line
+
+def tokenizer_p2(line):
+    line = line.replace("\'", " &apos;")
+    line = line.replace("\’", " &apos;")
+    line = line.replace("\’", " &apos;")
+    line = line.replace("\’", " &apos;")                      
+    line = line.replace("\"", " &apos;")
     return line
 
 clean_english_replace = read_as_dic("clean_english_replace.txt")
@@ -71,6 +76,9 @@ def cleaning(input_file, output_file, lower, tokenize, clean_text, english_to_si
 
         if lower:
             line = line.lower()
+
+        if tokenize:
+            line = tokenizer_p1(line)
         
         if clean_text:
         # Clean English words/phrases
@@ -89,20 +97,19 @@ def cleaning(input_file, output_file, lower, tokenize, clean_text, english_to_si
             for word in clean_english_to_singlish.keys():
                 line = special_replace(word, clean_english_to_singlish[word],line)
 
+        if tokenize:
+            line = tokenizer_p2(line)
+
         if filtering:
             # Filtering
             for word in singlish_vocab:
-                if word in line:
-                    if tokenize:
-                        line = tokenizer(line)
+                if " "+word+" " in line:
                     kept.write(line)
                     break
                 else:
                     if word == singlish_vocab[-1]:
                         discard.write(line)
         else:
-            if tokenize:
-                line = tokenizer(line)
             output_file.write(line)
             
 

@@ -1,9 +1,11 @@
 abit,a bit
 a not,anot
+a lot,alot
 ar bo,arbo
+bky,bu keyi
 hum ji,humji
+ky,keyi
 lj,lanjiao
-sui,swee
 lah,la
 lar,la
 lo,lor
@@ -13,3 +15,20 @@ rah,la
 rahs,la
 rahz,la
 sien,sian
+sui,swee
+chiobu,chio bu
+dinobu,dino bu
+siambu,siam bu
+buibui,bui bui
+yayapapaya,yaya papaya
+bian tai,biantai
+arh,ar
+nabeh,nabei
+lorh,lor
+fwah,wa
+dunch,dontch
+jit tao,jitao
+jittao,jitao
+cus,cos
+cuz,cos
+skally,sekali

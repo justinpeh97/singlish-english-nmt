@@ -1,73 +1,131 @@
 alr,already
 alrd,already
+ald,already
 boi,boy
 bck,back
 btw,by the way
+boyf,boyfriend
+becum,become
 coz,cos
-condo,condominium
+dunwan,dont want
+rem,remember
+otw,on the way
 dis,this
 den,then
+dk,dont know
 fk,fuck
+fker,fucker
 fr,for real
 gov,government
 govt,government
+girlf,girlfriend
 gurl,girl
 geddit,get it
 hv,have
 hav,have
-hk,hongkong
-imo,in my opinion
+hk,hong kong
 imho,in my honest opinion
-in b4,inb4
 ish,is
+jus,just
 juz,just
 lich,rich
 mins,minutes
 mth,month
 marnee,money
+mani,many
+wun,wont
+ebery,every
+ytd,yesterday
+stoopid,stupid
+stewdent,student
+becoz,because
+becum,become
+wld,would
 nao,now
 nid,need
 nite,night
 noe,know
 nvr,never
-notch,not
 polis,police
 pls,please
 plz,please
 ppl,people
-peepur,people
-peeper,people
+pple,people
 rmb,remember
 repork,report
+rite,right
 shld,should
 shd,should
 sg,singapore
+slp,sleep
+sch,school
 sinkapore,singapore
+tat,that
 tis,this
 tink,think
+thru,through
 ur,your
 unker,uncle
 wat,what
 wk,week
 wif,with
 w/o,without
-w,with
 yur,your
 tot,thought
 yrself,yourself
 yr old,year old
 yrs old,years old
-don't,dont
+sgp,singapore
+heypi,happy
+idw,i dont want
+avg,average
+dw,dont want
+fav,favourite
+rast,last
+moar,more
+rook,look
+rooks,looks
+cfm,confirm
+ppl,people
+rike,like
+riek,like
+wad,what
+lich,rich
+shiat,shit
+atm,at the moment
+bery,very
+beri,very
+nv,never
+nvr,never
+wht,what
+nite,night
+nites,nights
+mkt,market
+nao,now
+shiate,shit
+defo,definitely
+deffo,definitely
+gt,got
+frm, from
+biz,business
+vids,videos
+vid,video
+hab,have
 donch,dont
 dun,dont
+don't,dont
+didn't,didnt
+doesn't,doesnt
+can't,cant
+couldn't,couldnt
+isn't,isnt
+won't,wont
 didn't,didnt
 can't,cant
-isn't,isnt
-it's,its
 won't,wont
-wouldn't,wouldnt
-what's,whats
 i'm,im
 ain't,aint
 aren't,arent
-they've,theyve
+wouldn't,wouldnt
+haven't,havent
+that's,thats

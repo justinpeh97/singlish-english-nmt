@@ -15,7 +15,6 @@ ang ?moh?,angmo
 amdk,angmo
 (hong|ang) ?(pau|pow|bao),angpow
 arr+[.!?],ar
-ai ?yo ?(yo)?h?,aiyo
 hai ?ya+h,aiya
 balik,balek
 bak? ?k+wa,bakkwa
@@ -67,7 +66,7 @@ lehh+,leh
 le[yh] ?chey,leychey
 lao sai,laosai
 lim ?[bp]e[hi],limpeh
-[rl]iao[sz],liao
+[rl]iao[sz]?,liao
  lidat , liddat 
 nuah+,nua
 machiam,macam
@@ -102,4 +101,7 @@ wa seh,waseh
 xia lan,xialan
 xiao ?mei ?mei,xmm
 [xs]ia ?suay,xiasuay
-[cz]har? ?bor?,zhabor
+[cz]har? ?bor?h?,zhabor
+ha(ha)+,haha
+lol(ol)+,lolol
+ya[wo] ?siew,yaosiew

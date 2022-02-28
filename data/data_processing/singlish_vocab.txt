@@ -2,27 +2,21 @@ can
 eh
 got
 get
- la 
- la.
- la!
- la?
+la 
 4d
 11b
 a bit
 abuden
- act 
- action
+act 
+action
 agar-agar
 agakration
 angmo
 ah
- ar 
- ar.
- ar!
- ar?
+ar 
 arbo
 angpow
- anot
+anot
 aiya
 auntie
 arrow
@@ -31,6 +25,7 @@ a lot
 ayam
 alamak
 akan datang
+before
 blur
 bandung
 bodoh
@@ -43,23 +38,21 @@ belanja
 bakkwa
 baotoh
 beri
-bo 
-bo.
-bo?
-bo!
+bo
 bloody
+brb
 confirm
 cb
 cmi
 cui
 chop
- cher 
+cher 
 cheena
 chio
 chim
 chin chai
 chao
- cert 
+cert 
 cai png
 cek ark
 catch no ball
@@ -77,6 +70,7 @@ diam
 dunnid
 double confirm
 die die
+diff
 dabao
 diam
 dua
@@ -85,7 +79,6 @@ earpiece
 encik
 eye power
 engrish
- f 
 gao
 gahmen
 gabra
@@ -104,14 +97,16 @@ hoseh
 honggan
 humji
 ho liao
- how
-how come
+how
+huai
+intro
 isit
 imba
 jam
 jelak
 jiak
 jio
+jod
 jialat
 jitao
 jin
@@ -143,6 +138,7 @@ lobang
 laosai
 laolan
 leh
+lee
 leychey
 lagi
 lepak
@@ -151,35 +147,36 @@ lanjiao
 limpeh
 liao
 lor
- mug
+mug
 macam
 mafan
 mah
 moi
 makan
 makcik
- meh
+meh
 malu
 masak
- mati
+mati
 mata
- man
+man
 next time
 never
 no eye see
 no horse run
 ngeow
 neh neh
- nia
- nua
- oso
- one
- ord 
+nia
+nua
+oso
+one
+ord 
 occifer
 ownself
 obiang
 orbigood
- orh
+orh
+oni
 oredi
 play play
 PRC
@@ -200,7 +197,7 @@ pasar malam
 photostat
 pwn
 pokkai
- punde
+punde
 relak
 roti
 rojak
@@ -213,7 +210,7 @@ send
 stay
 step
 stonestun
- sio
+sio
 sia
 sinkie
 si gina
@@ -227,14 +224,14 @@ sotong
 suaku
 shiok
 sibei
- sho 
+sho 
 suka
 suaku
 suay
 song
 simi
-siam
- sian
+stupiak
+sian
 siao
 shiat
 teh
@@ -243,9 +240,9 @@ tzechar
 take
 tahan
 tekan
- tio
+tio
 towkay
- toot
+toot
 tompang
 tiko
 tan ku ku
@@ -253,7 +250,7 @@ tyco
 boleh
 tahan
 tikopeh
- ulu 
+ulu 
 unker
 understooded
 uncle
@@ -261,15 +258,12 @@ uplorry
 very the
 vomit blood
 wayang
- wan 
+wan 
 white horse
 wah 
-wah.
-wah!
-wah?
 waseh
 walan
- wan 
+wan 
 xiasuay
 xmm
 xdd
@@ -277,6 +271,7 @@ xialan
 yandao
 yaya
 your head
+yp
 zai
 zao
 zhabor
@@ -284,3 +279,25 @@ zhun
 zhenghu
 fly kite
 fly aeroplane
+far far
+try try
+beedio
+prease
+gotch
+exersai
+todai
+many many
+insai
+to the max
+for what
+zhng
+chut
+gao gao
+pattern
+cham
+dinobu
+dontch
+peng san
+wanna
+daiji
+siam

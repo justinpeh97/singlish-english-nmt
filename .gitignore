@@ -1,3 +1,9 @@
+cleaned_singlish.txt
+cleaned_reddit.txt
 full_singlish.txt
 full_reddit.txt
 subset_singlish.txt
+reddit.txt
+singlish.txt
+src_mapped.emb
+trg_mapped.emb

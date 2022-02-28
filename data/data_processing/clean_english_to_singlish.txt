@@ -1,4 +1,5 @@
 already,oredi
+because,cos
 dont know,dunno
 dont need,dunnid
 sabotage,sabo
@@ -8,8 +9,8 @@ china,cheena
 english,engrish
 relax,relak
 also,oso
-or not,anot
-because,cos
+only,oni
 singaporeans,sinkies
 singaporean,sinkie
-singapore,sinkieland
+you,chiu
+government,gahment
