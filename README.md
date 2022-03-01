@@ -52,10 +52,10 @@ Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [da
 
 # Training Phrase Embeddings
 
-Artetxe et al.'s implementation of Phrase2vec, an extension of the popular word2vec will be used for training of phrase embeddings. The phrase2vec folder is a forked repository of the original [repository](https://github.com/artetxem/phrase2vec). All credit goes to Artetxe and his team. To train the phrase embeddings, simply run the following commands:
+Artetxe et al.'s implementation of Phrase2vec, an extension of the popular word2vec, will be used for training of phrase embeddings. The phrase2vec folder is a forked repository of [monoses](https://github.com/artetxem/monoses), a repository used for training of the popular monoses unsupervised machine translation algorithm. The monoses repository is used as it provides the code to run the [Phrase2vec](https://github.com/artetxem/phrase2vec) algorithm. All credit goes to Artetxe and his team. To train the phrase embeddings, simply run the following commands:
 
 ```
-cd monoses
+cd phrase2vec
 bash get-third-party.sh
 cd third-party/phrase2vec
 make
