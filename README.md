@@ -62,11 +62,9 @@ make
 cd ./../../
 python3 train.py 
 
+```
 [comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg)
 
-
-
-```
 
 # Obtaining model results
 
