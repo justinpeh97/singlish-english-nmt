@@ -8,7 +8,7 @@
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
 ```
 
- ## Generation of datasets
+ # Generation of datasets
  
  ### Reddit dataset
  
@@ -49,6 +49,21 @@ The bash script processes 4 datasets: Singlish test dataset, Singlish validation
 Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are cleaning steps that map a word to another word. For instance, the first line in the file clean_english_replace.txt, "alr,already", converts all instances of "alr" in the text to "already". To edit the list of handpicked rules, simply edit the file while maintening it in the same format.
 
 ![hey now](https://github.com/justinpeh97/singlish-english-nmt/blob/main/images/convert.PNG?raw=true)
+
+# Training Phrase Embeddings
+
+Artetxe et al.'s implementation of Phrase2vec, an extension of the popular word2vec will be used for training of phrase embeddings. The phrase2vec folder is a forked repository of the original [repository](https://github.com/artetxem/phrase2vec). All credit goes to Artetxe and his team. To train the phrase embeddings, simply run the following commands:
+
+```
+cd monoses
+bash get-third-party.sh
+cd third-party/phrase2vec
+make
+cd ./../../
+
+
+
+```
 
 # Obtaining model results
 
