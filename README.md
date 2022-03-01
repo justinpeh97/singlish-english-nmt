@@ -14,7 +14,7 @@ git clone https://github.com/justinpeh97/singlish-english-nmt.git
  
 ```
 cd data/generate_data
-python reddit_scrape.py --client_id id --client_secret secret --user_agent agent
+python3 reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 ```
 
 id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/generate_train_data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optional argument --post_per_subreddit .
@@ -22,7 +22,7 @@ id, secret and agent are the client_id, client_secret and user_agent used to cre
 ### Singlish dataset
 
 ```
-python hwz_scrape.py 
+python3 hwz_scrape.py 
 ```
 If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
 
@@ -60,7 +60,9 @@ bash get-third-party.sh
 cd third-party/phrase2vec
 make
 cd ./../../
-python train.py  --working /hpctmp/e0310583/monoses
+python3 train.py 
+
+[comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg)
 
 
 
