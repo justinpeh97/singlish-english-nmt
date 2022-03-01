@@ -60,6 +60,7 @@ bash get-third-party.sh
 cd third-party/phrase2vec
 make
 cd ./../../
+python train.py  --working /hpctmp/e0310583/monoses
 
 
 
