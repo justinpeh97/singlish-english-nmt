@@ -2,7 +2,7 @@
  
  Despite the success of sequence-to-sequence RNN and Transformer models in Machine Translation (MT) tasks, most tasks still require a large parallel corpus. However, the progress in Unsupervised MT research has allowed for building of MT models without the need for parallel data, solely relying on monolingual corpora. This repository serves to explore the implementation of Undreamt, an unsupervised neural translation model, on Singlish-English translation tasks. The complete model is able to successfully learn Singlish-English word translations, but was unable to go beyond word-to-word translations. To the best of my knowledge, this is the first significant work done on Singlish-English machine translation.
  
- This readme file provides a step-by-step explanation on how to reproduce the results. 
+ This readme file provides a step-by-step explanation on how to reproduce the results. First, clone the repository.
 
 ```
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
@@ -16,15 +16,14 @@ git clone https://github.com/justinpeh97/singlish-english-nmt.git
 cd data/generate_data
 python3 reddit_scrape.py --client_id id --client_secret secret --user_agent agent
 ```
-
-id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/generate_train_data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optional argument --post_per_subreddit .
+id, secret and agent are the client_id, client_secret and user_agent used to create the Reddit instance. They can be obtained by following the instructions on this website: https://towardsdatascience.com/scraping-reddit-data-1c0af3040768 . If you wish to change remove/add subreddits to the list of subreddits being scraped, simply edit the subreddit.txt file found in [data](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/generate_data) . The default number of posts scrapped per subreddit is 3000, which is found to generate around 13+ million sentences. If you wish to specify another number, use the optional argument --post_per_subreddit .
 
 ### Singlish dataset
 
 ```
 python3 hwz_scrape.py 
 ```
-If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, meaning that on average, there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
+If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, hence on average there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
 
 ## Dataset Preprocessing
 
@@ -44,7 +43,7 @@ cd data
 bash process_datasets.sh
 ```
 
-The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is applied to all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is applied to all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets have already been manually filtered.
+The bash script processes 4 datasets: Singlish test dataset, Singlish validation dataset, Singlish (HWZ) train dataset and English (Reddit) train dataset. Conversion to lower case and tokenization is applied to all 4 datasets. In addition, cleaning of text, conversion of English words to Singlish vocabulary is applied to all Singlish datasets. Lastly, filtering is done for the Singlish train dataset. The Singlish test/val datasets are manually chosen hence there is no need for filtering.
 
 Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [data/data_processing](https://github.com/justinpeh97/singlish-english-nmt/tree/main/data/data_processing). singlish_vocab.txt is simply a text file containing all the singlish vocabulary used for filtering out non-Singlish sentences in the Singlish dataset. The other 5 datasets are cleaning steps that map a word to another word. For instance, the first line in the file clean_english_replace.txt, "alr,already", converts all instances of "alr" in the text to "already". To edit the list of handpicked rules, simply edit the file while maintening it in the same format.
 
@@ -63,7 +62,7 @@ cd ./../../
 python3 train.py 
 
 ```
-[comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg
+[comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg)
 
 # Training Cross Lingual Embeddings
 
@@ -78,7 +77,7 @@ Experimentation revealed that training using the --identical flag works best due
 
 # Training the Unsupervised Neural Machine Translation model
 
-The Undreamt model will be used for the training of the Unsupervised Neural Machine Translation model. Similar to vecmap, it is highly recommend to use GPU for training due to the large increase in training speed. The undreamt folder is a forked repository of the original [repository](https://github.com/artetxem/undreamt) created by Artetxe et al. To train the Undreamt model, simply run the following commands:
+The Undreamt model will be used for the training of the Unsupervised Neural Machine Translation model. Similar to vecmap, it is highly recommend to use GPU for training due to the large increase in training speed. The undreamt folder is a forked repository of the original [repository](https://github.com/artetxem/undreamt) created by Artetxe. To train the Undreamt model, simply run the following commands:
 
 ```
 cd undreamt
@@ -87,14 +86,14 @@ python3 train.py    \
  --src ./../data/datasets/processed/cleaned_corpus.src    \
  --trg ./../data/datasets/processed/cleaned_corpus.trg    \
  --src_embeddings ./../embeddings/mapped_emb.src \ 
-	--trg_embeddings ./../embeddings/mapped_emb.trg \
+ --trg_embeddings ./../embeddings/mapped_emb.trg \
  --cutoff 400000 \
  --save model    \
-	--save_interval 10000 \
-	--cuda          \
-	--iterations 150000   \
-	--batch 25 \
-	--hidden 800
+ --save_interval 10000 \
+ --cuda          \
+ --iterations 150000   \
+ --batch 25 \
+ --hidden 800
 ```
 
 The above training command uses the best hyperparameters determined through hyperparameter tuning. To perform your own hyperparameter tuning, simply change/edit the --argument flags according to the instructions in the train.py file found [here](https://github.com/artetxem/undreamt/blob/master/undreamt/train.py). 
