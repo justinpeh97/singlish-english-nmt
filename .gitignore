@@ -1,5 +1,5 @@
-cleaned_singlish.txt
-cleaned_reddit.txt
+cleaned_corpus.src
+cleaned_corpus.trg
 full_singlish.txt
 full_reddit.txt
 subset_singlish.txt

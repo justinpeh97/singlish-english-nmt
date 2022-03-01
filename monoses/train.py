@@ -187,10 +187,10 @@ def train_lm(args):
 
 # Step 3: Train embeddings
 def train_embeddings(args):
-    root = args.working + '/step3'
+    root = ./../embeddings
     os.mkdir(root)
     for part in ('src', 'trg'):
-        corpus = args.working + '/step1/train.true.' + part
+        corpus = args.working + './../data/datasets/processed/cleaned_corpus.' + part
 
         # Extract n-grams
         counts = []
