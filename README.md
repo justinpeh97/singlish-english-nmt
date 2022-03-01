@@ -52,10 +52,10 @@ Steps 3, 4 and 5 consists of cleaning steps defined by 6 text files found in [da
 
 # Training Phrase Embeddings
 
-Artetxe et al.'s implementation of Phrase2vec, an extension of the popular word2vec will be used for training of phrase embeddings. The phrase2vec folder is a forked repository of the original [repository](https://github.com/artetxem/phrase2vec). All credit goes to Artetxe and his team. To train the phrase embeddings, simply run the following commands:
+Artetxe et al.'s implementation of Phrase2vec, an extension of the popular word2vec, will be used for training of phrase embeddings. The phrase2vec folder is a forked repository of [monoses](https://github.com/artetxem/monoses), a repository used for training of the popular monoses unsupervised machine translation algorithm. The monoses repository is used as it provides the code to run the [Phrase2vec](https://github.com/artetxem/phrase2vec) algorithm. All credit goes to Artetxe and his team. To train the phrase embeddings, simply run the following commands:
 
 ```
-cd monoses
+cd phrase2vec
 bash get-third-party.sh
 cd third-party/phrase2vec
 make
@@ -63,10 +63,50 @@ cd ./../../
 python3 train.py 
 
 ```
-[comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg)
+[comment]: <> (python3 train.py --src_file ./../data/datasets/processed/cleaned_cleaned_corpus.src --trg_file ./../data/datasets/processed/cleaned_cleaned_corpus.trg
 
+# Training Cross Lingual Embeddings
+
+Vecmap will be used for the training of cross-lingual embeddings. It is highly recommended to utilize GPU for vecmap training as it can help to achieve up to 50x increased training speed. The vecmap folder is a forked repository of the original [repository](https://github.com/artetxem/vecmap) created by Artetxe et al. To train the cross lingual embeddings, simply run the following commands:
+
+```
+cd vecmap
+python3 map_embeddings.py --identical ./../embeddings/emb.src ./../embeddings/emb.trg   ./../embeddings/mapped_emb.src ./../embeddings/mapped_emb.trg   --cuda --verbose
+```
+
+Experimentation revealed that training using the --identical flag works best due to the large number of identical words between the English and Singlish vocabulary. It is also possible to train using the --unsupervised flag. The --semi_supervised flag can be used by providing a small seed dictionary of Singlish-English word pairs. 
+
+# Training the Unsupervised Neural Machine Translation model
+
+The Undreamt model will be used for the training of the Unsupervised Neural Machine Translation model. Similar to vecmap, it is highly recommend to use GPU for training due to the large increase in training speed. The undreamt folder is a forked repository of the original [repository](https://github.com/artetxem/undreamt) created by Artetxe et al. To train the Undreamt model, simply run the following commands:
+
+```
+cd undreamt
+
+python3 train.py    \
+ --src ./../data/datasets/processed/cleaned_corpus.src    \
+ --trg ./../data/datasets/processed/cleaned_corpus.trg    \
+ --src_embeddings ./../embeddings/mapped_emb.src \ 
+	--trg_embeddings ./../embeddings/mapped_emb.trg \
+ --cutoff 400000 \
+ --save model    \
+	--save_interval 10000 \
+	--cuda          \
+	--iterations 150000   \
+	--batch 25 \
+	--hidden 800
+```
+
+The above training command uses the best hyperparameters determined through hyperparameter tuning. To perform your own hyperparameter tuning, simply change/edit the --argument flags according to the instructions in the train.py file found [here](https://github.com/artetxem/undreamt/blob/master/undreamt/train.py). 
+
+
+# Training platform
+
+It is highly recommend to train the Vecmap and the Undreamt model using a GPU. Experimentations were done on NUS's High Performance Computing (HPC) clusters which uses Tesla V100-32GB GPUs. The Vecmap algorithm takes less than 10 minutes to train while the above command for Undreamt takes approximately 50 hours of training although it largely depends on the training set up (especially --iterations). Kaggle [servers](https://www.kaggle.com/code) as well as Google Colab [servers](https://colab.research.google.com/) provide free GPU for training models. Take note that the training set up might have to be adjusted to accomodate for the relatively smaller memory size of free GPU servers.
 
 # Obtaining model results
+
+## Undreamt 
 
 ## Word to Word model
 
