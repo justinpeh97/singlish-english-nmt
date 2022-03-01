@@ -7,3 +7,5 @@ reddit.txt
 singlish.txt
 src_mapped.emb
 trg_mapped.emb
+small_cleaned_corpus.trg
+small_cleaned_corpus.src
