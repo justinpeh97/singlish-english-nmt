@@ -8,6 +8,13 @@
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
 ```
 
+Installing dependencies
+```
+conda create -n senmt
+conda activate senmt
+pip install -r requirements.txt
+```
+
  # Generation of datasets
  
  ### Reddit dataset
@@ -73,7 +80,7 @@ cd vecmap
 python3 map_embeddings.py --identical ./../embeddings/emb.src ./../embeddings/emb.trg   ./../embeddings/mapped_emb.src ./../embeddings/mapped_emb.trg   --cuda --verbose
 ```
 
-Experimentation revealed that training using the --identical flag works best due to the large number of identical words between the English and Singlish vocabulary. It is also possible to train using the --unsupervised flag. The --semi_supervised flag can be used by providing a small seed dictionary of Singlish-English word pairs. 
+It is necessary to first install the dependencies as instructed in the [here](https://github.com/artetxem/vecmap). Experiments were successfully ran with Cupy 10.1.0. Experimentation revealed that training using the --identical flag works best due to the large number of identical words between the English and Singlish vocabulary. It is also possible to train using the --unsupervised flag. The --semi_supervised flag can be used by providing a small seed dictionary of Singlish-English word pairs. To make use 
 
 # Training the Unsupervised Neural Machine Translation model
 
@@ -95,8 +102,7 @@ python3 train.py    \
  --batch 25 \
  --hidden 800
 ```
-
-The above training command uses the best hyperparameters determined through hyperparameter tuning. To perform your own hyperparameter tuning, simply change/edit the --argument flags according to the instructions in the train.py file found [here](https://github.com/artetxem/undreamt/blob/master/undreamt/train.py). 
+It is necessary to first install PyTorch. Experiments were successfully ran with PyTorch 1.9.0. The above training command uses the best hyperparameters determined through hyperparameter tuning. To perform your own hyperparameter tuning, simply change/edit the --argument flags according to the instructions in the train.py file found [here](https://github.com/artetxem/undreamt/blob/master/undreamt/train.py). 
 
 
 # Training platform
@@ -125,7 +131,7 @@ python3 w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped
 
 ## Computing BLEU score
 
-To obtain the BLEU score, run the following command:
+To obtain the BLEU score, first run nltk.download('all') and then run the following command:
 ```
 python3 compute_bleu.py --candidate candidate_file --ref reference_file
 ```
