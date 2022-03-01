@@ -107,15 +107,26 @@ It is highly recommend to train the Vecmap and the Undreamt model using a GPU. E
 
 ## Undreamt 
 
+To run the translation output of the Undreamt model on the test dataset, run the following command:
+
+```
+cd undreamt
+python3 translate.py model.final.src2trg.pth -i ./../data/datasets/processed/test.sin.txt -o ./../data/datasets/model_output/undreamt_output.txt
+```
+
 ## Word to Word model
 
-A simple baseline model can be obtained by replacing each word in the source sentence with the closest word in the target sentence based on cosine similarity. To obtain the output of the word to word model, simply run the following command: 
+A simple baseline model can be obtained by replacing each word in the source sentence with the closest word in the target sentence based on cosine similarity. To obtain the output of the word to word model, run the following command: 
 
 ```
-python w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped.emb --num_words 50000 --output_file data/datasets/model_output/w2w_output.txt --test_file data/datasets/processed/all.translations.txt
+python3 w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped.emb --num_words 50000 --output_file data/datasets/model_output/w2w_output.txt --test_file data/datasets/processed/all.translations.txt
+
 ```
 
-## Other experiments
+## Computing BLEU score
 
-## Things to update 
-- BLEU/METEOR score
+To obtain the BLEU score, run the following command:
+```
+python3 compute_bleu.py --candidate candidate_file --ref reference_file
+```
+candidate_file and reference_file refers to the location of the candidate file (model output) and reference file (human translation) respectively.
