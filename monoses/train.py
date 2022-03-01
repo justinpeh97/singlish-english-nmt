@@ -25,81 +25,17 @@ from shlex import quote
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 THIRD_PARTY = os.path.abspath(os.environ['MONOSES_THIRD_PARTY']) if 'MONOSES_THIRD_PARTY' in os.environ else ROOT + '/third-party'
-FAST_ALIGN = THIRD_PARTY + '/fast_align/build'
-MOSES = THIRD_PARTY + '/moses'
-FAIRSEQ = THIRD_PARTY + '/fairseq'
-VECMAP = THIRD_PARTY + '/vecmap'
-SUBWORD_NMT = THIRD_PARTY + '/subword-nmt'
-PHRASE2VEC = THIRD_PARTY + '/phrase2vec/word2vec'
-TRAINING = ROOT + '/training'
+PHRASE2VEC = '/phrase2vec/word2vec'
 
 
 def bash(command):
     subprocess.run(['bash', '-c', command])
 
 
-def count_lines(path):
-    return int(subprocess.run(['wc', '-l', path], stdout=subprocess.PIPE).stdout.decode('utf-8').strip().split()[0])
-
-
-def binarize(output_config, output_pt, lm_path, lm_order, phrase_table, reordering=None, pt_scores=4, prune=100):
-    output_pt = os.path.abspath(output_pt)
-    lm_path = os.path.abspath(lm_path)
-
-    # Binarize
-    reord_args = ' --lex-ro ' + quote(reordering) + ' --num-lex-scores 6' if reordering is not None else ''
-    bash(quote(MOSES + '/scripts/generic/binarize4moses2.perl') +
-         ' --phrase-table ' + quote(phrase_table) +
-         ' --output-dir ' + quote(output_pt) +
-         ' --num-scores ' + str(pt_scores) +
-         ' --prune ' + str(prune) +
-         reord_args)
-
-    # Clean temporary files created by the binarization script
-    for tmp in glob.glob(output_pt + '/../tmp.*'):
-        shutil.rmtree(tmp)
-
-    # Build configuration file
-    with open(output_config, 'w') as f:
-        print('[input-factors]', file=f)
-        print('0', file=f)
-        print('', file=f)
-        print('[mapping]', file=f)
-        print('0 T 0', file=f)
-        print('', file=f)
-        print('[distortion-limit]', file=f)
-        print('6', file=f)
-        print('', file=f)
-        print('[feature]', file=f)
-        print('UnknownWordPenalty', file=f)
-        print('WordPenalty', file=f)
-        print('PhrasePenalty', file=f)
-        print('ProbingPT name=TranslationModel0 num-features=' + str(pt_scores) +
-              ' path=' + output_pt + ' input-factor=0 output-factor=0', file=f)
-        if reordering is not None:
-            print('LexicalReordering name=LexicalReordering0' +
-                  ' num-features=6 type=wbe-msd-bidirectional-fe-allff' +
-                  ' input-factor=0 output-factor=0 property-index=0', file=f)
-        print('Distortion', file=f)
-        print('KENLM name=LM0 factor=0 path=' + lm_path +
-              ' order=' + str(lm_order), file=f)
-        print('', file=f)
-        print('[weight]', file=f)
-        print('UnknownWordPenalty0= 1', file=f)
-        print('WordPenalty0= -1', file=f)
-        print('PhrasePenalty0= 0.2', file=f)
-        print('TranslationModel0=' + (' 0.2'*pt_scores), file=f)
-        if reordering is not None:
-            print('LexicalReordering0= 0.3 0.3 0.3 0.3 0.3 0.3', file=f)
-        print('Distortion0= 0.3', file=f)
-        print('LM0= 0.5', file=f)
-
-
-
 
 # Step 3: Train embeddings
 def train_embeddings(args):
-    root = ./../embeddings
+    root = "./../embeddings"
     os.mkdir(root)
     for part in ('src', 'trg'):
         corpus = './../data/datasets/processed/cleaned_corpus.' + part
