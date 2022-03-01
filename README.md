@@ -61,3 +61,6 @@ python w2wmodel.py --sing embeddings/src_mapped.emb --eng embeddings/trg_mapped.
 ```
 
 ## Other experiments
+
+## Things to update 
+- BLEU/METEOR score
