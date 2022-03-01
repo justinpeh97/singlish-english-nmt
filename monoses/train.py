@@ -38,8 +38,7 @@ def bash(command):
 # Step 3: Train embeddings
 def train_embeddings(args):
     root = "./../embeddings"
-    for part in ('src', 'trg'):
-        corpus = './../data/datasets/processed/small_cleaned_corpus.' + part
+    for corpus in [args.src_file, args.trg_file]:
 
         # Extract n-grams
         counts = []
@@ -86,7 +85,9 @@ def train_embeddings(args):
 def main():
     parser = argparse.ArgumentParser(description='Train an unsupervised SMT model')
     parser.add_argument('--threads', metavar='N', type=int, default=20, help='Number of threads (defaults to 20)')
-
+    parser.add_arguments('--src_file', type = str, default = './../data/datasets/processed/cleaned_corpus.src')
+    parser.add_arguments('--trg_file', type = str, default = './../data/datasets/processed/cleaned_corpus.trg')
+    
     phrase2vec_group = parser.add_argument_group('Step 3', 'Phrase embedding training')
     phrase2vec_group.add_argument('--vocab-cutoff', metavar='N', type=int, nargs='+', default=[200000, 400000, 400000], help='Vocabulary cut-off (defaults to 200000 400000 400000)')
     phrase2vec_group.add_argument('--vocab-min-count', metavar='N', type=int, default=10, help='Discard words with less than N occurrences (defaults to 10)')
