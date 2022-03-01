@@ -71,7 +71,7 @@ def main():
     output = open(args.output_file, "w", encoding = "utf-8")
     completed = 0
     for line in content:
-        output.write(line + "\n")
+        output.write(translate_sent(line, singlish_dict, english_dict, english_arr) + "\n")
         completed += 1
         if completed % 10 == 0:
             print(completed * 100 / len(content), "completed!")
