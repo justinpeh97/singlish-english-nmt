@@ -97,7 +97,7 @@ def main():
     parser.add_argument('--num_threads', type=int, default = None, help='Number of threads to scrape')
     parser.add_argument('--max-per-thread', type=int, default = 500000000, help='maximum number of comments from each thread')
     parser.add_argument('--thread', type=str, default = "https://forums.hardwarezone.com.sg/forums/eat-drink-man-woman.16", help = "thread to scrape")
-    parser.add_argument('--output', type=str, default = "./../raw/raw_singlish.txt", help = "name of output  file")
+    parser.add_argument('--output', type=str, default = "datasets/raw/raw_singlish.txt", help = "name of output  file")
 
     args = parser.parse_args()
 

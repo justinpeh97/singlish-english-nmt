@@ -8,7 +8,7 @@ import argparse
 
 
 def read_as_dic(fname):
-    file = open("data_processing/"+fname)
+    file = open(fname)
     content = file.read().splitlines()
     dic = {}
     for line in content:
@@ -17,7 +17,7 @@ def read_as_dic(fname):
     return dic
 
 def read_as_lst(fname):
-    file = open("data_processing/"+fname)
+    file = open(fname)
     content = file.read().splitlines()
     return content
 

@@ -5,8 +5,6 @@ from helper_functions import clean_comments_reddit, custom_splitting, convert_to
 import argparse
 
 # Model parameters
-subreddits = ["askreddit", "blog", "funny", "gaming", "iama", "lifehacks", "lifeprotips", "news", "nottheonion", "relationship_advice", "science",
-              "showerthoughts", "sports", "technology", "todayilearned", "worldnews"]
 
 
 
@@ -40,12 +38,12 @@ def main():
     parser.add_argument("--client_secret", type = str, help = "client secret")
     parser.add_argument("--user_agent", type = str, help = "user agent")
     parser.add_argument("--posts_per_subreddit", type = int, default = 3000)
-    parser.add_argument("--output", type = str, default = "./../raw/raw_reddit.txt")
+    parser.add_argument("--output", type = str, default = "datasets/raw/raw_reddit.txt")
     args = parser.parse_args()
 
     global reddit
     reddit = praw.Reddit(client_id= args.client_id, client_secret= args.client_secret, user_agent= args.user_agent)
-    subreddits = open("subreddits.txt").read().splitlines()
+    subreddits = open("data_generate/subreddits.txt").read().splitlines()
     file = open(args.output ,"w",encoding = "utf-8")
     num_sentences = 0
     for subreddit in subreddits:
