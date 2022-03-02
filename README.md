@@ -28,9 +28,9 @@ id, secret and agent are the client_id, client_secret and user_agent used to cre
 ### Singlish dataset
 
 ```
-python3 hwz_scrape.py 
+python3 hwz_scraping.py 
 ```
-If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, hence on average there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max_per_thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
+If no arguments are specified, then all comments from all threads will be scraped. Scraping all 200000+ threads generated 13+ million sentences, hence on average there are 60+ sentences per thread. However, the number of sentences per thread varies greatly, with some thread having as few as <10 sentences, while others having over 100000 sentences. --max-per-thread controls the maximum number of comments to scrape from each thread and hence, controls the variability of the data. --num_threads controls the number of threads to scrape. --thread controls the URl of the thread to scrape from. The default is the EDMW thread.
 
 ## Dataset Preprocessing
 
