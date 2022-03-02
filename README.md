@@ -6,6 +6,7 @@
 
 ```
 git clone https://github.com/justinpeh97/singlish-english-nmt.git
+cd singlish-english-nmt
 ```
 
 Installing dependencies
