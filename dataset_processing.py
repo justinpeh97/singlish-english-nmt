@@ -41,12 +41,12 @@ def tokenizer_p2(line):
     line = line.replace("\"", " &apos;")
     return line
 
-clean_english_replace = read_as_dic("clean_english_replace.txt")
-clean_english_regex = read_as_dic("clean_english_regex.txt")
-clean_singlish_replace = read_as_dic("clean_singlish_replace.txt")
-clean_singlish_regex = read_as_dic("clean_singlish_regex.txt")
-clean_english_to_singlish = read_as_dic("clean_english_to_singlish.txt")
-singlish_vocab = read_as_lst("singlish_vocab.txt")
+clean_english_replace = read_as_dic("data_generate/clean_english_replace.txt")
+clean_english_regex = read_as_dic("data_generate/clean_english_regex.txt")
+clean_singlish_replace = read_as_dic("data_generate/clean_singlish_replace.txt")
+clean_singlish_regex = read_as_dic("data_generate/clean_singlish_regex.txt")
+clean_english_to_singlish = read_as_dic("data_generate/clean_english_to_singlish.txt")
+singlish_vocab = read_as_lst("data_generate/singlish_vocab.txt")
 
 
 def cleaning(input_file, output_file, lower, tokenize, clean_text, english_to_singlish, filtering):
