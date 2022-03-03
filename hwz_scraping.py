@@ -20,7 +20,6 @@ def obtain_threads(url, num_threads):
         num_pages = max_pages + 1
     else:
         num_pages = int((num_threads // 20 ) + 1) + 1
-        print(num_pages)
     urls = [url + "/page-" +  str(page) for page in range(1,num_pages)]
     
     def scrape_forum_page(url):
@@ -56,6 +55,7 @@ def obtain_max_pages(html_soup):
         return page_nums[0].find_all('li')[-1].text
 
 def scrape_hwz(threads, max_per_thread, output):
+    print("Scraping replies")
     textfile = open(output, "w", encoding='utf-8')
     start = time.time()
     def comments_from_thread(url, max_per_thread):
@@ -76,7 +76,6 @@ def scrape_hwz(threads, max_per_thread, output):
                 cleaned_sentences = filter_sentences(sentences)
                 for sentence in cleaned_sentences:
                     textfile.write(sentence + "\n")
-
         return 
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -109,4 +108,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-# python hwz_scraping.py --start 0 --stop 10 --max-per-thread 100 
