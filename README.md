@@ -46,7 +46,6 @@ There are 5 main dataset preprocessing operations:
 Steps 1 & 2 are common data preprocessing steps for machine translation. Steps 3-5 are novel cleaning steps for the Singlish dataset and is believed to improve model performance. To perform dataset preprocessing, simply run the following command:
 
 ```
-cd data
 bash process_datasets.sh
 ```
 
